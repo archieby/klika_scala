@@ -42,7 +42,7 @@ object Functions {
    * 4. Partial functions: Напишите функцию, вычисляющую квадратный корень любого неотрицательного числа.
    */
   val sqrt: PartialFunction[Double, Double] = {
-    case d: Double if d > -1 => math.sqrt(d)
+    case d if d > -1 => math.sqrt(d)
   }
 
   def main(args: Array[String]): Unit = {

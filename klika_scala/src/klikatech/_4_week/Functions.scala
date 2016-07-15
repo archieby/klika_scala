@@ -1,6 +1,6 @@
 package klikatech._4_week
 
-object Function {
+object Functions {
 
   /**
    * 1. Higher order functions: Напишите прокси-генератор: функцию, которая принимает на вход две функции: f и g и возвращает

@@ -8,20 +8,21 @@ object LogicFunctions extends App {
 
   def printTable(f: (Boolean, Boolean, Boolean) => Boolean) = {
     val boolVals = List(false, true)
-    def getRow(cWidth: Int = 7)(ps: Any*) = {
+    val ColWidth = 7
+    def getRow(ps: Any*) = {
       def srtRepr(x: Any) = {
         val str = x.toString()
-        str + (" " * (cWidth - str.size))
+        str + (" " * (ColWidth - str.size))
       }
       ps.map(srtRepr).mkString
     }
-    val header = getRow()("A", "B", "C", "Result")
+    val header = getRow("A", "B", "C", "Result")
     val rows = for {
       a <- boolVals
       b <- boolVals
       c <- boolVals
-    } yield getRow()(a, b, c, f(a, b, c))
-    (header +: rows).foreach(println)
+    } yield getRow(a, b, c, f(a, b, c))
+    (header :: rows).foreach(println)
   }
 
   println("and(a, and(b, c))")

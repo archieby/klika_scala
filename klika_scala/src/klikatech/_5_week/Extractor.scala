@@ -1,7 +1,6 @@
 package klikatech._5_week
 
 import scala.util.matching.Regex
-import scala.util.Try
 
 case class Email(localPart: String, domainPart: String)
 
